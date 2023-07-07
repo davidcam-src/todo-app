@@ -17,6 +17,15 @@ const Todo = () => {
         setTodoText(e.target.value);
     }
 
+    const addTodo = (text) => {
+        const newTodo = {
+          id: Date.now(),
+          text: text,
+          status: "Backlog"
+        };
+    updateTodoGlobalVariable([...todoGlobalVariable, newTodo]);
+  };
+
     const handleSubmit = (e) => {
         e.preventDefault();
         if (todoText.trim() === '') {
@@ -26,7 +35,7 @@ const Todo = () => {
           //Pushing to test array
           todoArray.push(todoText);
           //Pushing to state array within context
-          updateTodoGlobalVariable([...todoGlobalVariable, todoText])
+          addTodo(todoText)
           // Setting state Within textbox
           setTodoText('');
         //   console.log(JSON.stringify(todoArray))

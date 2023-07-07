@@ -2,5 +2,9 @@
 // Map to a list of indiviual todo list components
 
 const TodoList = () => {
-    const todoList = useContext(TodoContext);
+    //Starting inProgress column
+    const [inProgress, setInProgress] = useState([]);
+    // const [backlog, setBacklog] = useState([]);
+    // const [done, setDone] = useState([]);
+
 };
